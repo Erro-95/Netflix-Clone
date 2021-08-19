@@ -1,10 +1,11 @@
 import React from "react";
-import { Nav } from "../components";
+import { Nav, Banner } from "../components";
 
 export default function HomeScreen() {
   return (
-    <div>
+    <div className="homeScreen">
       <Nav />
+      <Banner />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
-// import "./App.css";
+// import "./styles/global/App.css";
 import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ height: "2000px" }}>
       <HomeScreen />
     </div>
   );
