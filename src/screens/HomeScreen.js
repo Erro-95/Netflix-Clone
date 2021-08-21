@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Banner, Row } from "../components";
-import requests from "../api/Requests";
+import requests from "../api/requests";
 
 export default function HomeScreen() {
   return (
