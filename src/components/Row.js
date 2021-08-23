@@ -33,6 +33,7 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
     navigation: true,
     wrapperTag: "ul",
     spaceBetween: -30,
+    slidesPerGroup: 6,
     slidesPerView: 6,
   };
 
