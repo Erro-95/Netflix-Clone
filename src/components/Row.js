@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "./";
+import SwiperCore, { Pagination, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "../styles/modules/Row.module.css";
 import { axios } from "../api";
+import "swiper/swiper-bundle.css";
 
-export default function Row({ title, fetchUrl }) {
+SwiperCore.use([Pagination, Navigation]);
+
+export default function Row({ title, fetchUrl, isLargeRow = false }) {
   const [movies, setmovies] = useState([]);
 
   useEffect(() => {
@@ -20,14 +24,40 @@ export default function Row({ title, fetchUrl }) {
     }
 
     fetchMovies();
-  }, []);
+  }, [fetchUrl]);
+
+  const url = "https://image.tmdb.org/t/p/original";
+
+  const config = {
+    loop: true,
+    navigation: true,
+    wrapperTag: "ul",
+    spaceBetween: -30,
+    slidesPerView: 6,
+  };
 
   return (
     <section className={styles.row}>
-      <h1 className={styles.row_title}>{title}</h1>
-      {movies.map((movie) => {
-        return <Card poster={movie.poster_path} />;
-      })}
+      <h3 className={styles.row_title}>{title}</h3>
+      <Swiper {...config}>
+        {movies.map((movie) => {
+          return (
+            <SwiperSlide key={movie.id} tag="li">
+              <img
+                className={`${styles.row_poster} ${
+                  isLargeRow && styles.row_large_poster
+                }`}
+                src={`${url}${
+                  isLargeRow
+                    ? movie?.poster_path
+                    : movie?.backdrop_path || movie?.poster_path
+                }`}
+                alt={movie?.title || movie?.oriiginal_title}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </section>
   );
 }

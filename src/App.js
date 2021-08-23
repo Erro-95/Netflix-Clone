@@ -4,7 +4,7 @@ import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
-    <div className="App" style={{ height: "2000px" }}>
+    <div className="App">
       <HomeScreen />
     </div>
   );

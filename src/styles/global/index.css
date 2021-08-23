@@ -16,3 +16,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+img {
+  object-fit: contain;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  transition: all 0.6s;
+}
+
+img:hover {
+  transition: all 0.8s;
+  position: relative;
+  transform: scale(1.4);
+  z-index: 1;
+}
+
+div.swiper-container {
+  overflow: visible;
+}
