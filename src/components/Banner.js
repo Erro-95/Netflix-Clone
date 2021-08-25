@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/modules/Banner.module.css";
 import { axios, requests } from "../api";
 import { GrPlayFill } from "react-icons/gr";

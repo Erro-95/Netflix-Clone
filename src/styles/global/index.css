@@ -32,10 +32,15 @@ img {
 img:hover {
   transition: all 0.8s;
   position: relative;
-  transform: scale(1.4);
+  transform: scale(1.3);
   z-index: 1;
 }
 
 div.swiper-container {
   overflow: visible;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px !important;
 }

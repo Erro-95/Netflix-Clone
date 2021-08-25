@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../Logo.png";
 import Avatar from "../Avatar.jpg";
 import styles from "../styles/modules/Nav.module.css";
